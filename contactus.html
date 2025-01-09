@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Siddha Medical Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4e9dce, #5dbde8);
+            color: #333;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #0077b6;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        .hamburger-menu {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .contact-section {
+            padding: 50px 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            color: #0077b6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .contact-boxes {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .contact-box {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .contact-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-box i {
+            font-size: 2rem;
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+        
+        .contact-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .contact-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .contact-box a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-box a:hover {
+            color: #0077b6;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-boxes {
+                gap: 20px;
+                justify-content: center;
+            }
+        
+            .contact-box {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 490px) {
+            .contact-box {
+                width: 100%;
+                max-width: 290px;
+            }
+        }
+        
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #002d44;
+            color: white;
+            padding: 60px 20px;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            color: #ffcc00;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 1.1rem;
+            color: white;
+            line-height: 1.8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6f61;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section i {
+            margin-right: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff6f61;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                width: 80%;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .footer-bottom {
+                padding-top: 10px;
+            }
+
+            .contact-boxes {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,ta,hi,ml',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+            <div id="google_translate_element"></div>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out to us through any of the below methods. We are always happy to assist you!</p>
+
+        <div class="contact-boxes">
+            <div class="contact-box" onclick="window.location.href='tel:+91 9788873463'">
+                <i class="fas fa-phone"></i>
+                <p><strong>Phone:</strong> +91 9788873463</p>
+            </div>
+            <div class="contact-box" onclick="window.location.href='mailto: periyasamysidhavaithyasalai@gmail.com'">
+                <i class="fas fa-envelope"></i>
+                <p><strong>Email:</strong> periyasamysidhavaithya<br>salai@gmail.com</p>
+            </div>
+            <div class="contact-box" onclick="window.location.href='https://maps.app.goo.gl/LyQrExiNmymVm1bV7'">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Address:</strong>Kalanivasal Area, Karaikudi, Tamil Nadu 630001</p>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.1994046366876!2d78.76373287513634!3d10.082741290026952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b006743c0c1d2ad%3A0x906642c11bc346fa!2sPeriyasamy%20Nadu%20Maruthuvam!5e0!3m2!1sen!2sin!4v1736239655747!5m2!1sen!2sin"
+                frameborder="0"
+                style="border:0; width: 100%; height: 100%;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="contactus.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> <a href="tel:+919788873463"><i class="fas fa-phone"></i> +91 9788873463</a></p>
+                <p><strong>Email:</strong> <a href="mailto:periyasamysidhavaithyasalai@gmail.com"><i class="fas fa-envelope"></i>  periyasamysidhavaithyasalai@gmail.com</a></p>
+                <p><strong>Address:</strong> <i class="fas fa-map-marker-alt"></i> Kalanivasal Area, Karaikudi, Tamil Nadu 630001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Periyavar.Mu.Periyasamy Siddha Vaithiya Salai | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
